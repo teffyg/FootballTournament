@@ -1,0 +1,21 @@
+
+<div class="d-flex" id="wrapper">
+
+  <ng-container *ngIf="isVisible">
+      <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Listado de Querys </div>
+        <div class="list-group list-group-flush">
+          <a class="list-group-item" href="#" [routerLink]="['./games']">Partidos</a>
+          <a class="list-group-item" href="#" [routerLink]="['/ranking']">Tabla Posiciones</a>
+          <a class="list-group-item" href="#" [routerLink]="['/players']">Estadisticas Jugadores</a>
+          <a class="list-group-item" href="#" [routerLink]="['/penalties']">Estadisticas Sanciones</a>
+        </div>
+      </div>
+  </ng-container>
+  <div id="page-content-wrapper">
+
+    <div class="container m-2">
+      <router-outlet></router-outlet>
+    </div>
+    </div>
+</div>
