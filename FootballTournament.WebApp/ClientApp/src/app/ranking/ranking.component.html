@@ -1,5 +1,9 @@
 <div class="container mt-2">
-  <table class="table">
+  <ng-container *ngIf="!viewModel">
+    <p>Loading</p>
+  </ng-container>
+  <table *ngIf="viewModel"
+         class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -9,24 +13,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Colon de Santa Fe</td>
-        <td>6</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Estudiantes de la Plata</td>
-        <td>4</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Velez Sarsfield</td>
-        <td>4</td>
-        <td>2</td>
-      </tr>
+      <tr *ngFor="let team of viewModel.teams; let i = index;">
+        <th scope="row">{{i}}</th>
+        <td>{{team.name}}</td>
+        <td>{{team.points}}</td>
+        <td>{{team.score}}</td>
+      </tr>      
     </tbody>
   </table>
 </div>

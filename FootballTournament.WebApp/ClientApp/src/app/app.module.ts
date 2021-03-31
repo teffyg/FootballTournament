@@ -14,6 +14,7 @@ import { PlayersStatisticsComponent } from './players-statistics/players-statist
 import { PenaltiesStatisticsComponent } from './penalties-statistics/penalties-statistics.component'
 import { GamesComponent } from './games/games.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { RankingViewModel } from '../models/ranking.view.model';
 
 @NgModule({
   declarations: [
@@ -33,9 +34,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      {
-        path: '', component: HomeComponent, pathMatch: 'full'
-      },
+      { path: '', component: RankingComponent, pathMatch: 'full' },
       { path: 'games', component: GamesComponent },
       { path: 'ranking', component: RankingComponent },
       { path: 'players', component: PlayersStatisticsComponent },

@@ -8,4 +8,5 @@ export class AppComponent  {
   title = 'app';
   //declarar toglleSidebar
   //navBarVisibleValue  = true or false
+
 }

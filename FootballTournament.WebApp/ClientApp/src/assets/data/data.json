@@ -1,0 +1,32 @@
+[
+   {
+      "team_name":"COLON DE SANTA FE",
+      "PUNTOS":9,
+      "GOLES":8
+   },
+   {
+      "team_name":"RIVER PLATE",
+      "PUNTOS":6,
+      "GOLES":7
+   },
+   {
+      "team_name":"NEWELL'S OLD BOYS",
+      "PUNTOS":4,
+      "GOLES":2
+   },
+   {
+      "team_name":"VELEZ SARFIELD",
+      "PUNTOS":3,
+      "GOLES":4
+   },
+   {
+      "team_name":"ESTUDIANTES DE LA PLATA",
+      "PUNTOS":3,
+      "GOLES":3
+   },
+   {
+      "team_name":"CENTRAL CORDOBA",
+      "PUNTOS":1,
+      "GOLES":1
+   }
+]

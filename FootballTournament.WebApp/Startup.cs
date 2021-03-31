@@ -1,7 +1,9 @@
+using FootballTournament.WebApp.Database;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,8 +28,15 @@ namespace FootballTournament.WebApp
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-        }
 
+            services.AddDbContext<DatabaseContext>(
+                options => 
+                {
+                    options.UseSqlServer("Data Source=DESKTOP-GQ2Q45H\\SQLEXPRESS;Initial Catalog=\"Football Tournament\"; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+                }
+            );
+        }
+    
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -70,6 +79,8 @@ namespace FootballTournament.WebApp
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+
         }
     }
 }

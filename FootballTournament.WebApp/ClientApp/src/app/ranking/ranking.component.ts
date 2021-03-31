@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RankingViewModel } from '../../models/ranking.view.model';
+import { AppService } from '../../services/app.service';
 
 @Component({
   selector: 'app-ranking',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ranking.component.css']
 })
 export class RankingComponent implements OnInit {
+  public viewModel: RankingViewModel;
 
-  constructor() { }
+  constructor(public appService: AppService) { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+
+    this.appService
+      .getRanking()
+      .subscribe((rankingModel: RankingViewModel) => {
+          this.viewModel = rankingModel;
+      })
   }
 
 }
